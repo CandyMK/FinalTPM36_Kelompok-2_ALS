@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration - Page 2</title>
-    <!-- Bootstrap 5 CSS for styling -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -13,7 +12,7 @@
         
         <form action="{{ route('register.page2.submit') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <!-- Full Name -->
+            <!-- nama dari lead -->
             <div class="mb-3">
                 <label for="full_name" class="form-label">Full Name</label>
                 <input type="text" class="form-control @error('full_name') is-invalid @enderror" 
@@ -23,7 +22,7 @@
                 @enderror
             </div>
 
-            <!-- Email -->
+            <!-- Email leader-->
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control @error('email') is-invalid @enderror" 
@@ -53,7 +52,7 @@
                 @enderror
             </div>
 
-            <!-- GitHub ID -->
+            <!-- GitHub ID Leader -->
             <div class="mb-3">
                 <label for="github_id" class="form-label">GitHub ID</label>
                 <input type="text" class="form-control @error('github_id') is-invalid @enderror" 
@@ -63,7 +62,7 @@
                 @enderror
             </div>
 
-            <!-- Birthplace -->
+            <!-- tempat lahir leader -->
             <div class="mb-3">
                 <label for="birthplace" class="form-label">Birthplace</label>
                 <input type="text" class="form-control @error('birthplace') is-invalid @enderror" 
@@ -73,7 +72,7 @@
                 @enderror
             </div>
 
-            <!-- Birthdate -->
+            <!-- tangga lahir leader -->
             <div class="mb-3">
                 <label for="birthdate" class="form-label">Birthdate</label>
                 <input type="date" class="form-control @error('birthdate') is-invalid @enderror" 
@@ -93,9 +92,9 @@
                 @enderror
             </div>
 
-            <!-- Flazz Card Upload -->
+            <!-- Flazz Card Upload Optional untuk Binusian-->
             <div class="mb-3">
-                <label for="flazz_card" class="form-label">Flazz Card (Optional, JPG/PNG)</label>
+                <label for="flazz_card" class="form-label">Flazz Card (Binusian, JPG/PNG)</label>
                 <input type="file" class="form-control @error('flazz_card') is-invalid @enderror" 
                        id="flazz_card" name="flazz_card">
                 @error('flazz_card')
@@ -103,9 +102,9 @@
                 @enderror
             </div>
 
-            <!-- ID Card Upload -->
+            <!-- ID Card Upload Optional untuk non Binusian -->
             <div class="mb-3">
-                <label for="id_card" class="form-label">ID Card (Optional, JPG/PNG)</label>
+                <label for="id_card" class="form-label">ID Card (Non-Binusian, JPG/PNG)</label>
                 <input type="file" class="form-control @error('id_card') is-invalid @enderror" 
                        id="id_card" name="id_card">
                 @error('id_card')

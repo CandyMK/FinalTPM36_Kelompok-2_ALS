@@ -11,9 +11,9 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        <!-- Team Name Field -->
+        <!-- Name Group -->
         <div>
-            <label for="group_name">Team Name</label>
+            <label for="group_name">Group Name</label>
             <input type="text" id="group_name" name="group_name" required value="{{ old('group_name') }}">
             @error('group_name')
                 <div>{{ $message }}</div>

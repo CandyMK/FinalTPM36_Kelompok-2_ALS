@@ -20,11 +20,11 @@ class RegistrationController extends Controller
                 'required',
                 'string',
                 'min:8',
-                'regex:/[A-Z]/',    // Must have uppercase
-                'regex:/[a-z]/',    // Must have lowercase
-                'regex:/[0-9]/',    // Must have a number
-                'regex:/[@$!%*?&#]/', // Must have a special character
-                'confirmed',       // Must match confirm password
+                'regex:/[A-Z]/',    // tes Uppercase
+                'regex:/[a-z]/',    // tes Lowercase
+                'regex:/[0-9]/',    // tes Angka
+                'regex:/[@$!%*?&#]/', // tes karakter spesial
+                'confirmed',       // sama dengan password konfirmasi
             ],
             'password_confirmation' => 'required',
             'binusian_status' => 'required|in:Binusian,Non-Binusian',
@@ -32,7 +32,7 @@ class RegistrationController extends Controller
 
         session([
             'group_name' => $request->group_name,
-            'password' => bcrypt($request->password), // Hash the password
+            'password' => bcrypt($request->password), 
             'binusian_status' => $request->binusian_status,
         ]);
 
@@ -63,16 +63,15 @@ class RegistrationController extends Controller
             'email.email' => 'Please enter a valid email like user@gmail.com.',
         ]);
 
-        // Store the files
+        
         $cvPath = $request->file('cv')->store('uploads/cv', 'public');
         $flazzCardPath = $request->file('flazz_card') 
             ? $request->file('flazz_card')->store('uploads/flazz_cards', 'public') 
-            : null; // Optional for Flazz Card
+            : null;
         $idCardPath = $request->file('id_card') 
             ? $request->file('id_card')->store('uploads/id_cards', 'public') 
-            : null; // Optional for ID Card
+            : null; 
     
-        // Save the registration data
         Registration::create([
             'group_name' => session('group_name'),
             'password' => session('password'),
@@ -89,7 +88,6 @@ class RegistrationController extends Controller
             'id_card' => $idCardPath,
         ]);
 
-        // Redirect to the success page or confirmation
         return redirect()->route('login')->with('message', 'Registration successful!');
     }
 

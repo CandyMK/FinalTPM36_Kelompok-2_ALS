@@ -21,11 +21,10 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
     
-        // Attempt to find the user based on group_name
         $user = Registration::where('group_name', $request->group_name)->first();
     
         if ($user && Hash::check($request->password, $user->password)) {
-            Auth::login($user);  // Log in the user
+            Auth::login($user); 
             $request->session()->regenerate();
             return redirect()->route('home')->with('success', 'Login successful.');
         } else {
