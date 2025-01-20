@@ -16,7 +16,7 @@
 
     
     <a href="{{route('login')}}" class="btn btn-success">Login</a>
-    <a href="{{route('register')}}" class="btn btn-success">Register</a>
+    <a href="{{route('register.page1')}}" class="btn btn-success">Register</a>
 
     <form action="{{ route('logout') }}" method="POST" class="d-flex" >
         @csrf
