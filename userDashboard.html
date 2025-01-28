@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Londrina+Solid:wght@100;300;400;900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="userDashboard.css">
+    <title>User Dashboard</title>
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <img src="assets/logo.png" alt="Logo">
+            <nav>
+                <a href="Landing_page_home.html">HOME</a>
+                <a href="Landing_page_champion_prize.html">CHAMPION PRIZE</a>
+                <a href="Landing_page_mentornjury.html">MENTOR & JURYS</a>
+                <a href="Landing_page_about.html">ABOUT</a>
+                <a href="Landing_page_faq.html">FAQ</a>
+                <a href="Landing_page_timeline.html">TIMELINE</a>
+                <a href="Login-Page.html" class="login-button">LOGIN</a>
+            </nav>
+        </header>
+        
+        <main>
+            <div class="team-info">
+                <h2>Tim Ayam Jago Lari</h2>
+                <h3>Leader</h3>
+                <p>Full Name:</p>
+                <p>Email:</p>
+                <p>WhatsApp Number:</p>
+                <p>LINE ID:</p>
+                <p>Github / Github ID:</p>
+                <p>Birth Place:</p>
+                <p>Birth Date:</p>
+            </div>
+
+            <div class="document">
+                <p>View CV:</p>
+                <button>View CV</button>
+                <p>View Flazz Card (Binusian):</p>
+                <button>View Flazz Card</button>
+                <p>View ID Card (Non-Binusian):</p>
+                <button>View ID Card</button>
+            </div>
+
+            <div class="contact">
+                <p>Contact Person</p>
+                <p>IG: @devinac</p>
+                <p>LINE: @devinac</p>
+                <p>Number: 081278348654</p>
+            </div>
+        </main>
+        
+        <div class="timeline-container">
+            <section class="timeline">
+                <h3>TIMELINE</h3>
+                <div class="timeline-bar">
+                    <div class="timeline-item up">
+                        <p>Open Registration</p>
+                    </div>
+                    <div class="timeline-item down">
+                        <p>Close Registration</p>
+                    </div>
+                    <div class="timeline-item up">
+                        <p>Technical Meeting</p>
+                    </div>
+                    <div class="timeline-item down">
+                        <p>Competition Day</p>
+                    </div>
+                </div>
+            </section>
+            
+            <button type="button" class="logout-button" id="logout-btn">LOGOUT</button>
+            
+            <div class="overlay" id="overlay"></div>
+            <div class="popup" id="popup">
+                <img src="assets/confirmation.png" class="popup-logo">
+                <h2>Are you sure you want to log out?</h2>
+                <div class="actions">
+                    <button type="button" id="confirm-btn">
+                        Yes <img src="assets/confirm.png" alt="Confirm">
+                    </button>
+                    <button type="button" id="cancel-btn">
+                        No <img src="assets/cancel.png" alt="Cancel">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="userDashboard.js"></script>
+</body>
+</html>
