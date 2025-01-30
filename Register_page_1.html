@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/Register_page_1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
+    <title>Register</title>
+</head>
+
+<body>
+    <nav>
+        <div class="Block">
+            <a class="Nav-link" href="Landing_page_home.html">HOME</a>
+            <a class="Nav-link" href="Landing_page_champion_prize.html">CHAMPION PRIZE</a>
+            <a class="Nav-link" href="Landing_page_mentornjury.html">MENTOR & JURYS</a>
+            <a class="Nav-link" href="Landing_page_about.html">ABOUT</a>
+            <a class="Nav-link" href="Landing_page_faq.html">FAQ</a>
+            <a class="Nav-link" href="Landing_page_timeline.html">TIMELINE</a>
+            <div class="login-block Nav-link">
+                <a class="Login" href="Login-Page.html">LOGIN</a>
+            </div>
+        </div>
+    </nav>
+
+    <img class="logo" src="Assets_regist/Hackathon_logo.png" alt="Hackathon">
+    <p style="position: absolute; top: 50px;left: 75px; color: #FFFF;">Hackathon</p>
+
+    <div class="submission-container">
+        <form id="registrationForm">
+            <div>
+                <p style="margin-bottom: 10px">Nama Group: </p>
+                <input type="text" id="groupName" class="submission" placeholder="Type your group name">
+            </div>
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px">Password: </p>
+                <input type="password" id="password" class="submission" placeholder="Type your password">
+            </div>
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px">Confirm Password: </p>
+                <input type="password" id="confirmPassword" class="submission" placeholder="Confirm your password">
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="binusian" class="checkbox" name="type" value="Binusian">
+                <label for="binusian">Binusian</label>
+                <input type="radio" id="nonBinusian" class="checkbox" name="type" value="Non-Binusian">
+                <label for="nonBinusian">Non-Binusian</label>
+            </div>
+            
+            <div class="submit-button">
+                <a href="#" id="submitButton" type="submit">Submit</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="error-modal" id="errorModal">
+        <img id="errorImage" src="" alt="Error">
+    </div>
+
+    <script src="js_regist/regist1.js"></script>
+</body>
+</html>

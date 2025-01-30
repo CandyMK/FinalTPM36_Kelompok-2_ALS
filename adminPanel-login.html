@@ -6,33 +6,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Londrina+Solid:wght@100;300;400;900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Login-Page.css">
-    <title>Login</title>
+    <link rel="stylesheet" href="adminPanel-login.css">
+    <title>AdminPanel-Login</title>
 </head>
 <body>
     <header>
         <img src="assets/logo.png" alt="Logo">
         <nav>
-          <a href="Landing_page.html#page1">HOME</a>
-          <a href="Landing_page.html#page2">CHAMPION PRIZE</a>
-          <a href="Landing_page.html#page3">MENTOR & JURYS</a>
-          <a href="Landing_page.html#page4">ABOUT</a>
-          <a href="Landing_page.html#page5">FAQ</a>
-          <a href="Landing_page.html#page6">TIMELINE</a>
-          <a href="Login-Page.html" class="login-button">LOGIN</a>
-        </nav>
+            <a href="Landing_page.html#page1">HOME</a>
+            <a href="Landing_page.html#page2">CHAMPION PRIZE</a>
+            <a href="Landing_page.html#page3">MENTOR & JURYS</a>
+            <a href="Landing_page.html#page4">ABOUT</a>
+            <a href="Landing_page.html#page5">FAQ</a>
+            <a href="Landing_page.html#page6">TIMELINE</a>
+            <a href="Login-Page.html" class="login-button">LOGIN</a>
+          </nav>
     </header>
     
     <div class="login-container">
-        <h1>LOGIN</h1>
+        <h1>ADMIN LOGIN</h1>
   
-        <form action="userDashboard.html" method="get">
-            <div class="group-container">
+        <form action="adminPanel-show.html" method="get">
+            <div class="username-container">
                 <div class="input">
-                    <img src="assets/group.png" alt="Group">
-                    <a href="#" class="group-name">Group Name</a>
+                    <img src="assets/group.png" alt="Username">
+                    <a href="#" class="username-name">Username</a>
                 </div>
-                <input type="text" placeholder="Group Name..." required>
+                <input type="text" placeholder="Username..." required>
              </div>
   
             <div class="password-container">
@@ -45,11 +45,7 @@
   
             <button type="submit">Login</button>
         </form>
-  
-        <a href="#" class="no-account">Don't have an account?</a>
-        <a href="Register_page_1.html">Sign Up</a>
     </div>
-
-    <script src="login-Page.js"></script>
+    <script src="adminPanel-login.js"></script>
 </body>
 </html>

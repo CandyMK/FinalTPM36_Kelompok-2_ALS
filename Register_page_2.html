@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/Register_page_2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
+    <title>Register</title>
+</head>
+
+
+<body>
+    <!-- Navbar atas -->
+    <nav>
+        <div class="Block">
+            <a class="Nav-link" href="Landing_page_home.html">HOME</a>
+            <a class="Nav-link" href="Landing_page_champion_prize.html">CHAMPION PRIZE</a>
+            <a class="Nav-link" href="Landing_page_mentornjury.html">MENTOR & JURYS</a>
+            <a class="Nav-link" href="Landing_page_about.html">ABOUT</a>
+            <a class="Nav-link" href="Landing_page_faq.html">FAQ</a>
+            <a class="Nav-link" href="Landing_page_timeline.html">TIMELINE</a>
+            <div class="login-block Nav-link">
+                <a class="Login" href="Login-Page.html">LOGIN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Logo -->
+    <img class="logo" src="Assets_regist/Hackathon_logo.png" alt="Hackathon">
+    <p style="position: absolute; top: 50px;left: 75px; color: #FFFF;">Hackathon</p>
+
+    <!-- Form yang sebelah kiri -->
+    <div class="submission-container">
+        <form id="registrationForm">
+            <div>
+                <p style="margin-bottom: 10px;">Full Name: </p>
+                <input type="text" id="groupName" class="submission" placeholder="Type your Name">
+            </div>
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px;;">Email: </p>
+                <input type="text" id="Email" class="submission" placeholder="Type your Email">
+            </div>
+
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px;">WhatsApp Number: </p>
+                <input type="text" id="Number" class="submission" placeholder="Type your WhatsApp Number">
+            </div>
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px;">LINE ID: </p>
+                <input type="text" id="LINEID" class="submission" placeholder="Type your LINE ID">
+            </div>
+
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px;">Github / Github ID: </p>
+                <input type="text" id="GitID" class="submission" placeholder="Type your Github">
+            </div>
+
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px;">Birth Place: </p>
+                <input type="text" id="birthPlace" class="submission" placeholder="Type your Birth Place">
+            </div>
+
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px;">Birth Date: </p>
+                <div class="submission" style="margin-bottom: 40px;">
+                    <input type="text" id="dateDisplay" class="date-display" placeholder="Select Date" readonly>
+                    <img src="Assets_regist/Calendar_icon.png" alt="Calendar" class="calendar-icon" onclick="openDatePicker()">
+                    <input type="date" id="birthdate" onchange="updateDate()">
+                </div>
+        </form>
+    </div>
+
+    <!-- Form yang sebelah kanan -->
+    <div class="submission-container2">
+        <form>
+            <div>
+                <div style="display: flex; gap: 10px;">
+                    <img style="width: 81px; height: 81px;" src="Assets_regist/Upload_logo.png">
+                    <p style="font-size: 29.4px; margin-bottom: -10px;">Upload CV: </p>
+                </div>
+                <div class="upload-label submission" style="border-radius: 10px; width: 227px; height: 38px; margin-left: 100px; padding: 0px;">
+                    <label for="file">
+                        <img src="Assets_regist/Upload_icon.png" alt="Upload" width="50" height="50">
+                        <input type="file" name="file" id="file" class="custom-file-input" required>
+                    </label>
+                </div>
+            </div>
+            <p class="little-note" style="font-size: 16.19px; left: 100px;">*Format file pdf, jpg, jpeg dan png</p>
+
+
+            <div style="margin-top: 50px;">
+                <div style="display: flex; gap: 10px;">
+                    <img style="width: 81px; height: 81px;" src="Assets_regist/Upload_logo.png">
+                    <p style="font-size: 29.4px; margin-bottom: -10px;">Upload Flazz Card (Binusian): </p>
+                </div>
+                <div class="upload-label submission" style="border-radius: 10px; width: 227px; height: 38px; margin-left: 100px; padding: 0px;">
+                    <label for="file">
+                        <img src="Assets_regist/Upload_icon.png" alt="Upload" width="50" height="50">
+                        <input type="file" name="file" id="file" class="custom-file-input" required>
+                    </label>
+                </div>
+            </div>
+            <p class="little-note" style="font-size: 16.19px; left: 100px;">*Format file pdf, jpg, jpeg dan png</p>
+
+            <div style="margin-top:50px;">
+                <div style="display: flex; gap: 10px;">
+                    <img style="width: 81px; height: 81px;" src="Assets_regist/Upload_logo.png">
+                    <p style="font-size: 29.4px; margin-bottom: -10px;">Upload ID Card (Non-Binusian): </p>
+                </div>
+                <div class="upload-label submission" style="border-radius: 10px; width: 227px; height: 38px; margin-left: 100px; padding: 0px;">
+                    <label for="file">
+                        <img src="Assets_regist/Upload_icon.png" alt="Upload" width="50" height="50">
+                        <input type="file" name="file" id="file" class="custom-file-input" required>
+                    </label>
+                </div>
+            </div>
+            <p class="little-note" style="font-size: 16.19px; left: 100px;">*Format file pdf, jpg, jpeg dan png</p>
+
+            <div class="submit-button">
+                <a href="#" id="submitButton" type="submit">Submit</a>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- Buat pop up error -->
+    <div id="modalOverlay" class="modal-overlay"></div>
+    <div id="errorModal" class="error-modal">
+    <img id="errorImage" src="" alt="Error">
+    </div>
+
+    <script src="js_regist/regist2.js"></script>
+</body>
+</html>

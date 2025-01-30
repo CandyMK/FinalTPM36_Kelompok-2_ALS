@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  font-weight: 400;
   background: linear-gradient(to bottom, #9CD1FC 0%, #2948A8 55%);
   color: white;
   display: flex;
@@ -21,6 +20,7 @@ header {
   padding: 5px 20px;
   position: absolute;
   top: 0;
+  left: 0;
   z-index: 1000;
 }
 
@@ -60,91 +60,72 @@ nav a {
   color: #FFFFFF;
 }
 
-.login-container {
+.form-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+form {
+  max-width: 700px;
   font-family: 'Josefin Sans', sans-serif;
-  text-align: center;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.login-container h1 {
-  margin-top: 45px;
-  margin-bottom: 35px;
-  font-weight: 400;
-  font-size: 30px;
-}
-
-.login-container form {
+.form-group {
   display: flex;
-  flex-direction: column;
-  gap: 25px;
   align-items: center;
+  margin-bottom: 10px;
 }
 
-.group-container input, .password-container input {
-  text-align: left; 
-  padding: 10px 20px; 
+.form-group label {
+  width: 230px;
+}
+
+.form-group input {
+  font-family: 'Josefin Sans', sans-serif;
+  flex: 1;
+  padding: 8px;
   border: none;
   outline: none;
-  border-radius: 20px;
-  font-size: 16px;
-  width: 300px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.8);
-}
- 
-.login-container .toggle-password {
-  position: absolute;
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 16px;
-  color: #BFBFBF;
+  border-radius: 5px;
 }
 
-.login-container a {
-  color: white;
-  font-size: 16px;
-  margin-top: 10x;
-}
-
-.login-container button {
+.submit-btn {
   font-family: 'Josefin Sans', sans-serif;
   text-decoration: underline;
   align-items: center;
-  padding: 8px;
-  width: 120px;
+  margin: 30px auto 0;
+  padding: 10px 20px;
   background: #FFFFFF;
-  border: none;
   color: #000000;
+  border: none;
   border-radius: 20px;
   cursor: pointer;
   font-size: 16px;
-  margin-bottom: 30px;
-  margin-top: 20px;
 }
 
-.input {
-  display: flex;
-  align-items: center;
-  gap: 10px; 
+.profile {
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  text-align: center;
 }
 
-.input img {
-  width: 20px; 
-  height: 20px;
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
 }
 
-.input a {
-  font-size: 16px;
-  text-decoration: none;
-  color: #FFFFFF;
-  margin: 0;
-}
-
-.no-account {
-  text-decoration: none;
-  margin-bottom: 10px;
+.profile p {
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 0px;
 }
 
 @media (max-width: 768px) {
@@ -155,5 +136,23 @@ nav a {
   nav {
     flex-wrap: wrap;
     gap: 10px;
+  }
+
+  .form-container {
+    width: 80%;
+  }
+
+  .form-group label {
+    width: 160px;
+  }
+
+  .submit-btn {
+    padding: 10px 40px;
+  }
+
+  .profile {
+    margin-left: 20px;
+    text-align: center;
+    position: static;
   }
 }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Londrina+Solid:wght@100;300;400;900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="adminPanel-show.css">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <div class="admin-panel">
+        <header>
+            <img src="assets/logo.png" alt="Logo">
+            <nav>
+                <a href="Landing_page.html#page1">HOME</a>
+                <a href="Landing_page.html#page2">CHAMPION PRIZE</a>
+                <a href="Landing_page.html#page3">MENTOR & JURYS</a>
+                <a href="Landing_page.html#page4">ABOUT</a>
+                <a href="Landing_page.html#page5">FAQ</a>
+                <a href="Landing_page.html#page6">TIMELINE</a>
+                <a href="Login-Page.html" class="login-button">LOGIN</a>
+              </nav>
+        </header>
+
+        <main class="teams">
+            <div class="filter-options">
+                <div class="input-container">
+                    <img src="assets/inputTeamName.png" class="input-icon">
+                    <input type="text" id="team-search" placeholder="Input Team Name">
+                    <img src="assets/search.png" class="search-icon">
+                </div>
+
+                <div class="sort-container">
+                    <button id="sort-button">
+                        Sort by <img src="assets/sort.png" alt="Sort">
+                    </button>
+                    
+                    <div id="sort-options" class="hidden">
+                        <button class="sort-option" data-sort="name-asc">Team Name A-Z</button>
+                        <button class="sort-option" data-sort="name-desc">Team Name Z-A</button>
+                        <button class="sort-option" data-sort="oldest">Oldest Registration Date</button>
+                        <button class="sort-option" data-sort="latest">Latest Registration Date</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team">
+                <h2>Tim Ayam Jago Lari</h2>
+                <div class="actions">
+                    <button class="view">View Team Details</button>
+                    <button class="edit">Edit Team</button>
+                    <button class="delete">Delete Team</button>
+                </div>
+            </div>
+    
+            <div class="team">
+                <h2>Pendekar Bintang Malam</h2>
+                <div class="actions">
+                    <button class="view">View Team Details</button>
+                    <button class="edit">Edit Team</button>
+                    <button class="delete">Delete Team</button>
+                </div>
+            </div>
+    
+            <div class="team">
+                <h2>Raja Laut Perkasa</h2>
+                <div class="actions">
+                    <button class="view">View Team Details</button>
+                    <button class="edit">Edit Team</button>
+                    <button class="delete">Delete Team</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="adminPanel-show.js"></script>
+</body>
+</html>

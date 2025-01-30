@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, #9CD1FC 0%, #2948A8 55%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-attachment: fixed;
+  padding-top: 130px;
+}
+
+header {
+  font-family: 'Londrina Solid', sans-serif;
+  font-weight: 400;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  padding: 5px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+header img {
+  position: flex;
+  top: 10px; 
+  height: 140px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  color: #000000;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 400;
+}
+
+.login-button {
+  display: inline-block;
+  width: 70px; 
+  height: 40px;
+  line-height: 40px;
+  text-align: center; 
+  border-radius: 15px;
+  background-color: #007BFF;
+  color: #FFFFFF;
+}
+
+.team-details-container {
+  width: 90%;
+}
+
+main {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  top: 0;
+}
+
+main h1 {
+  font-family: 'Londrina Solid', sans-serif;
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-bottom: 90px;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  flex-wrap: wrap;
+}
+
+.member:nth-child(even) {
+  transform: translateY(50px); 
+}
+
+.member:nth-child(odd) {
+  transform: translateY(-60px);
+}
+
+.member {
+  text-align: center;
+}
+
+.member img {
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  margin-bottom: 0px;
+}
+
+.member p {
+  margin-top: 0px;
+  font-size: 16px;
+}
+
+.back-button {
+  font-family: 'Londrina Solid', sans-serif;
+  position: relative;
+  margin-top: 130px;
+  margin-bottom: 20px;
+  margin-left: 0;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 320px;
+  }
+  
+  header {
+    margin-top: 10px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
