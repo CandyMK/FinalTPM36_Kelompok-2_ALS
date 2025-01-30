@@ -24,11 +24,19 @@ class AdminPanelController extends Controller
     }
 
     /**
+     * Get all groups by created_at
+     */
+    public function getAllGroups(string $orderBy)
+    {
+        $groups = \DB::table('groups')->orderBy("created_at", $orderBy);
+        return response()->json($groups);
+    }
+    /**
      * Get all groups.
      */
-    public function getAllGroups()
+    public function getAllGroupsSortBy(string $column, string $orderBy )
     {
-        $groups = \DB::table('groups')->get();
+        $groups = \DB::table('groups')->orderBy($column, $orderBy);
         return response()->json($groups);
     }
 
