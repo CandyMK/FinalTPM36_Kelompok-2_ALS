@@ -155,7 +155,7 @@
 <body>
     <div class="dashboard">
         <header>
-            <img src="{{asset('Assets/Hackathon_logo.png')}}" alt="Logo">
+            <img src="{{asset('assets/logo.png')}}" alt="Logo">
             <nav>
                 <a href="{{route('home')}}">HOME</a>
                 <a href="{{route('home')}}">CHAMPION PRIZE</a>
@@ -227,7 +227,7 @@
 
                 <form action="{{ route('logout') }}" method="POST" class="d-flex" >
             @csrf
-            <button class="btn btn-danger" type="submit">Logout</button>
+            <button class="btn btn-danger" type="submit">LOGOUT</button>
         </form>
 
             {{-- <form action="{{ route('logout') }}" method="POST" class="d-flex" >
