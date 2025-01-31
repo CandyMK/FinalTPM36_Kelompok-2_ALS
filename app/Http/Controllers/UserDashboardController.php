@@ -14,3 +14,6 @@ class UserDashboardController extends Controller
         return view('userDashboard', compact('registrations'));
     }
 }
+
+
+

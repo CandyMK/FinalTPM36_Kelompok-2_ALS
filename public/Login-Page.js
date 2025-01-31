@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.querySelector('form');
 
     loginForm.addEventListener('submit', function (event) {
-        event.preventDefault();
+        // event.preventDefault();
 
         const inputGroupName = document.querySelector('input[placeholder="Group Name..."]').value.trim();
         const inputPassword = document.querySelector('input[placeholder="Password..."]').value;

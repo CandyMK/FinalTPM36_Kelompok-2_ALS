@@ -26,13 +26,15 @@
     <div class="login-container">
         <h1>LOGIN</h1>
 
-        <form action="userDashboard.html" method="get">
+        <form action="{{ route('loginStore') }}" method="POST">
+            @csrf   
+
             <div class="group-container">
                 <div class="input">
                     <img src="assets/group.png" alt="Group">
                     <a href="#" class="group-name">Group Name</a>
                 </div>
-                <input type="text" placeholder="Group Name..." required>
+                <input type="text" id="group_name" name="group_name" placeholder="Group Name..." required>
              </div>
 
             <div class="password-container">
@@ -40,7 +42,7 @@
                     <img src="assets/key.png" alt="Key">
                     <a href="#" class="password">Password</a>
                 </div>
-                <input type="password" placeholder="Password..." id="password" required>
+                <input type="password" id="password" name="password" placeholder="Password..." required>
             </div>
 
             <button type="submit">Login</button>

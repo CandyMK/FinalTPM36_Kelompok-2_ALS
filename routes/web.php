@@ -17,9 +17,9 @@ Route::get('/register/page2', [RegistrationController::class, 'showPage2'])->nam
 Route::post('/register/page2', [RegistrationController::class, 'submitPage2'])->name('register.page2.submit');;
 
 //login
-Route::get('/login', [AuthController::class, 'ShowLoginForm'])->name('login')->middleware('guest');
+Route::get('/login', [AuthController::class, 'ShowLoginForm'])->name('login');
 
-Route::post('/login', [AuthController::class, 'Login'])->name('loginStore')->middleware('guest');
+Route::post('/login', [AuthController::class, 'Login'])->name('loginStore');
 
 //logout
 Route::post('/logout', [AuthController::class,'logout'])->name('logout');
