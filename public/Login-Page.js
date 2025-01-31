@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Login Successful!');
             localStorage.setItem('loggedInUser', JSON.stringify(matchedUser));
 
-            window.location.href = 'userDashboard.html'; 
+            window.location.href = '/user/dashboard'; 
         } else {
             alert('Wrong Group Name or Password!');
         }

@@ -35,7 +35,7 @@ class RegistrationController extends Controller
             'password' => bcrypt($request->password), 
             'binusian_status' => $request->binusian_status,
         ]);
-
+        
         return redirect()->route('register.page2');
     }
 

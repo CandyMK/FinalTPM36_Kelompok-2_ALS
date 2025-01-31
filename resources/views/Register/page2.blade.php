@@ -13,14 +13,14 @@
     <!-- Navbar atas -->
     <nav>
         <div class="Block">
-            <a class="Nav-link" href="Landing_page.html#page1">HOME</a>
-            <a class="Nav-link" href="Landing_page.html#page2">CHAMPION PRIZE</a>
-            <a class="Nav-link" href="Landing_page.html#page3">MENTOR & JURYS</a>
-            <a class="Nav-link" href="Landing_page.html#page4">ABOUT</a>
-            <a class="Nav-link" href="Landing_page.html#page5">FAQ</a>
-            <a class="Nav-link" href="Landing_page.html#page6">TIMELINE</a>
+            <a class="Nav-link" href="{{route('home')}}">HOME</a>
+            <a class="Nav-link" href="{{route('home')}}">CHAMPION PRIZE</a>
+            <a class="Nav-link" href="{{route('home')}}">MENTOR & JURYS</a>
+            <a class="Nav-link" href="{{route('home')}}">ABOUT</a>
+            <a class="Nav-link" href="{{route('home')}}">FAQ</a>
+            <a class="Nav-link" href="{{route('home')}}">TIMELINE</a>
             <div class="login-block Nav-link">
-                <a class="Login" href="Login-Page.html">LOGIN</a>
+                <a class="Login" href="{{route('login')}}">LOGIN</a>
             </div>
         </div>
     </nav>
@@ -38,31 +38,31 @@
 
             <div>
                 <p style="margin-bottom: 10px;">Full Name: </p>
-                <input type="text" id="full_name" name="full_name" class="submission" placeholder="Type your Name">
+                <input type="text" id="full_name" name="full_name" class="submission" placeholder="Type your Name" value="{{ old('full_name') }}" >
             </div>
 
             <div>
                 <p style="margin-top: 40px; margin-bottom: 10px;">Email: </p>
-                <input type="text" id="email" name="email" class="submission" placeholder="Type your Email">
+                <input type="text" id="email" name="email" class="submission" placeholder="Type your Email" value="{{ old('email') }}" >
             </div>
 
             <div>
                 <p style="margin-top: 40px; margin-bottom: 10px;">WhatsApp Number: </p>
-                <input type="text" id="whatsapp" name="whatsapp" class="submission" placeholder="Type your WhatsApp Number">
+                <input type="text" id="whatsapp" name="whatsapp" class="submission" placeholder="Type your WhatsApp Number" value="{{ old('whatsapp') }}" >
             </div>
             <div>
                 <p style="margin-top: 40px; margin-bottom: 10px;">LINE ID: </p>
-                <input type="text" id="line_id" name="line_id" class="submission" placeholder="Type your LINE ID">
+                <input type="text" id="line_id" name="line_id" class="submission" placeholder="Type your LINE ID" value="{{ old('line_id') }}" >
             </div>
 
             <div>
                 <p style="margin-top: 40px; margin-bottom: 10px;">Github / Github ID: </p>
-                <input type="text" id="github_id" name="github_id" class="submission" placeholder="Type your Github">
+                <input type="text" id="github_id" name="github_id" class="submission" placeholder="Type your Github" value="{{ old('github_id') }}" >
             </div>
 
             <div>
                 <p style="margin-top: 40px; margin-bottom: 10px;">Birth Place: </p>
-                <input type="text" id="birthplace" name="birthplace" class="submission" placeholder="Type your Birth Place">
+                <input type="text" id="birthplace" name="birthplace" class="submission" placeholder="Type your Birth Place" value="{{ old('birthplace') }}" >
             </div>
 
             <div>
@@ -70,7 +70,7 @@
                 <div class="submission" style="margin-bottom: 40px;">
                     <input type="text" id="dateDisplay" class="date-display" placeholder="Select Date" readonly>
                     <img src="../Assets_regist/Calendar_icon.png" alt="Calendar" class="calendar-icon" onclick="openDatePicker()">
-                    <input type="date" id="birthdate" name="birthdate" onchange="updateDate()">
+                    <input type="date" id="birthdate" name="birthdate" onchange="updateDate()" value="{{ old('birthdate') }}" >
                 </div>
 
             <div>

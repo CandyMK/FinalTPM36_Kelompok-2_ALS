@@ -46,7 +46,7 @@
             <button type="submit">Login</button>
         </form>
 
-        <a href="#" class="no-account">Don't have an account?</a>
+        <a href="{{route('register.page1')}}" class="no-account">Don't have an account?</a>
         <a href="{{route('register.page1')}}">Sign Up</a>
     </div>
 
