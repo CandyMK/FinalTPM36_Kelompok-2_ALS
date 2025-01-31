@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\UserDashboardController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,8 +19,11 @@ Route::post('/register/page2', [RegistrationController::class, 'submitPage2'])->
 //login
 Route::get('/login', [AuthController::class, 'ShowLoginForm'])->name('login')->middleware('guest');
 
-Route::post('/login', [AuthController::class, 'Login'])->name('loginStore')->middleware('guest');   
+Route::post('/login', [AuthController::class, 'Login'])->name('loginStore')->middleware('guest');
 
 //logout
 Route::post('/logout', [AuthController::class,'logout'])->name('logout');
+
+//user dashboard
+Route::get('/user/dashboard', [UserDashboardController::class, 'showUserDashboard'])->name('userDashboard');
 
