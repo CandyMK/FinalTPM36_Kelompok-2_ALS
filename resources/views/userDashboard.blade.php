@@ -133,8 +133,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> --}}
-
+</html>
+ --}}
 
 
 
@@ -149,7 +149,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Londrina+Solid:wght@100;300;400;900&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/userDashboard.css')}}">
+    <link rel="stylesheet" href="{{asset('Css/userDashboard.css')}}">
     <title>User Dashboard</title>
 </head>
 <body>
@@ -168,10 +168,12 @@
         </header>
 
         <main>
+            @php
+                $user = $registrations->where('id', session('user_id'))->first();
+            @endphp
+
+            @if ($user)
             <div class="team-info">
-                @php
-                    $user = $registrations->where('id', session('user_id'))->first();
-                @endphp
 
                 <h2 id="team-name"></h2>
                 <h3>Leader</h3>
@@ -199,6 +201,9 @@
                 <p id="contact-line">LINE: @devinac</p>
                 <p id="contact-number">Number: 081278348654</p>
             </div>
+            @else
+            <p>User data not found.</p>
+            @endif
         </main>
 
         <div class="timeline-container">

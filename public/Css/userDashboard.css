@@ -1,0 +1,344 @@
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #9CD1FC 0%, #2948A8 55%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+header {
+    font-family: 'Londrina Solid', sans-serif;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 40px);
+    padding: 5px 20px;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+}
+
+header img {
+    position: flex;
+    top: 10px;
+    height: 140px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    color: #000000;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 400;
+}
+
+.login-button {
+    display: inline-block;
+    width: 70px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: #007BFF;
+    color: #FFFFFF;
+}
+
+main {
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 70px;
+    width: 95%;
+    margin-top: 260px;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+
+.team-info {
+    background: #9CD1FC;
+    color: #FFFFFF;
+    padding: 20px;
+    border: 1.5px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 300px;
+    text-align: left;
+}
+
+.team-info h2,
+.team-info h3 {
+    margin: 0 0 10px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.team-info h2 {
+    font-weight: 700;
+}
+
+.team-info h3 {
+    padding-bottom: 10px;
+    font-weight: 400;
+}
+
+.team-info p {
+    color: #FFFFFF;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.document {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.document p {
+    margin: 5px 0px;
+}
+
+.document button {
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: #FFFFFF;
+    color: #2948A8;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contact {
+    margin-top: -15px;
+    margin-left: 50px;
+    text-align: left;
+}
+
+.contact p {
+    line-height: 0.2;
+}
+
+.timeline-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.timeline {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: normal;
+    width: 80%;
+    margin: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+.timeline h3 {
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: white;
+    text-align: left;
+}
+
+.timeline-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.timeline-bar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #9CD1FC;
+}
+
+.timeline-item.up {
+    transform: translateY(-30px);
+}
+
+.timeline-item.down {
+    transform: translateY(30px);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 16px;
+    background-color: #9CD1FC;
+    left: 50%;
+    z-index: 1;
+}
+
+.timeline-item.up::after {
+    top: calc(50% + 15px);
+}
+
+.timeline-item.down::after {
+    top: calc(70% - 38px);
+}
+
+.timeline-item p {
+    margin: 10px 0;
+    background-color: white;
+    color: #2948A8;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.logout-button {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    font-family: 'Londrina Solid', sans-serif;
+    padding: 12px 18px;
+    border-radius: 15px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #007BFF;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1100;
+}
+
+.popup.show,
+.overlay.show {
+    display: block;
+}
+
+.popup {
+    font-family: 'Josefin Sans', sans-serif;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    font-size: 10px;
+    color: #2948A8;
+    border-radius: 10px;
+    text-align: center;
+    padding: 40px 25px;
+    z-index: 1200;
+}
+
+.popup-logo {
+    position: absolute;
+    top: 10px;
+    margin-bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.popup .actions button {
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.actions button {
+    background-color: #9CD1FC;
+    color: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.actions button img {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        margin-top: 10px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    main {
+        margin-top: 450px;
+    }
+
+    .timeline-item.up p {
+        margin-bottom: 20px;
+    }
+
+    .timeline-item.down::after {
+        top: calc(70% - 43px);
+    }
+
+    .timeline-item.down p {
+        margin-top: 20px;
+    }
+
+    .contact {
+        margin-left: 20px;
+    }
+
+    .contact p {
+        line-height: 1.2;
+    }
+}
