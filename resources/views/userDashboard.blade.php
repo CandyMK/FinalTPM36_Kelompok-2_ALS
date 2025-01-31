@@ -227,7 +227,7 @@
 
                 <form action="{{ route('logout') }}" method="POST" class="d-flex" >
             @csrf
-            <button class="btn btn-danger" type="submit">Logout</button>
+            <button class="btn btn-danger" type="submit">LOGOUT</button>
         </form>
 
             {{-- <form action="{{ route('logout') }}" method="POST" class="d-flex" >
