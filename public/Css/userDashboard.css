@@ -217,7 +217,7 @@ main {
     font-weight: bold;
 }
 
-.logout-button {
+.btn-danger {
     position: fixed;
     bottom: 20px;
     right: 40px;
