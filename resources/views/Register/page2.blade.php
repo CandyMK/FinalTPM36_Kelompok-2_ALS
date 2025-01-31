@@ -13,12 +13,12 @@
     <!-- Navbar atas -->
     <nav>
         <div class="Block">
-            <a class="Nav-link" href="Landing_page.html#page1">HOME</a>
-            <a class="Nav-link" href="Landing_page.html#page2">CHAMPION PRIZE</a>
-            <a class="Nav-link" href="Landing_page.html#page3">MENTOR & JURYS</a>
-            <a class="Nav-link" href="Landing_page.html#page4">ABOUT</a>
-            <a class="Nav-link" href="Landing_page.html#page5">FAQ</a>
-            <a class="Nav-link" href="Landing_page.html#page6">TIMELINE</a>
+            <a class="Nav-link" href="{{route('home')}}">HOME</a>
+            <a class="Nav-link" href="{{route('home')}}">CHAMPION PRIZE</a>
+            <a class="Nav-link" href="{{route('home')}}">MENTOR & JURYS</a>
+            <a class="Nav-link" href="{{route('home')}}">ABOUT</a>
+            <a class="Nav-link" href="{{route('home')}}">FAQ</a>
+            <a class="Nav-link" href="{{route('home')}}">TIMELINE</a>
             <div class="login-block Nav-link">
                 <a class="Login" href="{{route('login')}}">LOGIN</a>
             </div>
