@@ -13,13 +13,13 @@
     <header>
         <img src="assets/logo.png" alt="Logo">
         <nav>
-          <a href="Landing_page.html#page1">HOME</a>
-          <a href="Landing_page.html#page2">CHAMPION PRIZE</a>
-          <a href="Landing_page.html#page3">MENTOR & JURYS</a>
-          <a href="Landing_page.html#page4">ABOUT</a>
-          <a href="Landing_page.html#page5">FAQ</a>
-          <a href="Landing_page.html#page6">TIMELINE</a>
-          <a href="Login-Page.html" class="login-button">LOGIN</a>
+          <a href="{{route('home')}}">HOME</a>
+          <a href="{{route('home')}}">CHAMPION PRIZE</a>
+          <a href="{{route('home')}}">MENTOR & JURYS</a>
+          <a href="{{route('home')}}">ABOUT</a>
+          <a href="{{route('home')}}">FAQ</a>
+          <a href="{{route('home')}}">TIMELINE</a>
+          <a href="{{route('login')}}" class="login-button">LOGIN</a>
         </nav>
     </header>
 
