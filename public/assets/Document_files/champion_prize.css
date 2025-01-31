@@ -1,0 +1,145 @@
+html, body {
+    height: 100%; /* Make sure the page takes up the full height of the viewport */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+}
+
+body {
+    position: relative;
+    width: 100%; /* Make sure the width is 100% */
+    height: 100%; /* Make sure the height is 100% */
+  
+    background: linear-gradient(180deg, #9CD1FC 0%, #2948A8 55%);
+    background-size: cover; /* Ensure the background fills the screen without repeating */
+    background-attachment: fixed; /* Optional: Make the background stay fixed when scrolling */
+}
+  
+h1{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+}
+  
+p{
+    font-family: 'Josefin Sans', sans-serif;
+}
+  
+.Block{
+  
+    position: absolute;
+    width: 1180px;
+    height: 65px;
+    left: 218px;
+    top: 35px;
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    gap: 25px;
+    align-items: center;
+  
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+}
+  
+.Nav-link{
+    white-space: nowrap;
+    display: flex;
+    margin-left: 40px;
+  
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+  
+    color: #2948A8;
+}
+  
+.login-block{
+    width: 113px;
+    height: 53px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  
+    background: #007BFF;
+    border-radius: 25px;
+}
+  
+.Login{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+  
+.logo{
+    width: 140px;
+    border-radius: 30px;
+    margin-left: 43px;
+    margin-top: 19px;
+    display: flex;
+}
+
+.first-prize{
+
+    box-sizing: border-box;
+  
+    position: absolute;
+    width: 268.77px;
+    height: 369.45px;
+    left: 635.21px;
+    top: 280.1px;
+  
+    background: #FFFFFF;
+    border: 0.853226px solid #000000;
+    box-shadow: 0px 3.4129px 3.4129px rgba(0, 0, 0, 0.25);
+    border-radius: 12.7984px;
+    display: flex;
+}
+  
+.champion-box{
+    width: 204.77px;
+    height: 151.87px;
+    display: flex;
+    position: absolute;
+  
+    background-color: #9CD1FC;
+    border-radius: 17.06px;
+    top: 20px;
+    left: 32px;
+}
+  
+.second-prize{
+  
+    box-sizing: border-box;
+  
+    position: absolute;
+    width: 268.77px;
+    height: 369.45px;
+    left: 281.12px;
+    top: 513.89px;
+  
+    background: #FFFFFF;
+    border: 0.853226px solid #000000;
+    box-shadow: 0px 3.4129px 3.4129px rgba(0, 0, 0, 0.25);
+    border-radius: 12.7984px;
+  
+}
+  
+.third-prize{
+  
+    box-sizing: border-box;
+  
+    position: absolute;
+    width: 268.77px;
+    height: 369.45px;
+    left: 972.23px;
+    top: 525.83px;
+  
+    background: #FFFFFF;
+    border: 0.853226px solid #000000;
+    box-shadow: 0px 3.4129px 3.4129px rgba(0, 0, 0, 0.25);
+    border-radius: 12.7984px;
+}
+  

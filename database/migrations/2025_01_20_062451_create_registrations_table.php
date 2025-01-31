@@ -26,7 +26,7 @@ return new class extends Migration
         $table->timestamps();
 
         // Indexes for faster querying
-        $table->index(['group_id', 'email']);
+        $table->index(['id', 'email']);
         });
     }
 
