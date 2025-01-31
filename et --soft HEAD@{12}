@@ -1,0 +1,11 @@
+[33m29d5024[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/LoginRegister[m[33m)[m HEAD@{0}: reset: moving to origin/main
+[33mce3c2c6[m HEAD@{1}: checkout: moving from main to main
+[33mce3c2c6[m HEAD@{2}: checkout: moving from LoginRegister to main
+[33mce3c2c6[m HEAD@{3}: checkout: moving from main to LoginRegister
+[33mce3c2c6[m HEAD@{4}: checkout: moving from main to main
+[33mce3c2c6[m HEAD@{5}: checkout: moving from main to main
+[33mce3c2c6[m HEAD@{6}: checkout: moving from main to main
+[33mce3c2c6[m HEAD@{7}: checkout: moving from LoginRegister to main
+[33mce3c2c6[m HEAD@{8}: checkout: moving from main to LoginRegister
+[33mce3c2c6[m HEAD@{9}: Branch: renamed refs/heads/master to refs/heads/main
+[33mce3c2c6[m HEAD@{11}: commit (initial): Penggabungan frontEnd dan BackEnd Login Register (masalah di pop up error)

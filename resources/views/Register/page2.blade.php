@@ -3,121 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration - Page 2</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/Register_page_2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
+    <title>Register</title>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="mb-4">Page 2: Additional Information</h1>
-        
-        <form action="{{ route('register.page2.submit') }}" method="POST" enctype="multipart/form-data">
+    
+    <!-- Navbar atas -->
+    <nav>
+        <div class="Block">
+            <a class="Nav-link" href="Landing_page.html#page1">HOME</a>
+            <a class="Nav-link" href="Landing_page.html#page2">CHAMPION PRIZE</a>
+            <a class="Nav-link" href="Landing_page.html#page3">MENTOR & JURYS</a>
+            <a class="Nav-link" href="Landing_page.html#page4">ABOUT</a>
+            <a class="Nav-link" href="Landing_page.html#page5">FAQ</a>
+            <a class="Nav-link" href="Landing_page.html#page6">TIMELINE</a>
+            <div class="login-block Nav-link">
+                <a class="Login" href="Login-Page.html">LOGIN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Logo -->
+    <img class="logo" src="../Assets_regist/Hackathon_logo.png" alt="Hackathon">
+    <p style="position: absolute; top: 50px; left: 75px; color: #FFFF;">Hackathon</p>
+
+    
+    
+    <!-- Form yang sebelah kiri -->
+    <div class="submission-container">
+        <form id="registrationForm" action="{{ route('register.page2.submit') }}" method="POST" enctype="multipart/form-data" novalidate>
             @csrf
-            <!-- nama dari lead -->
-            <div class="mb-3">
-                <label for="full_name" class="form-label">Full Name</label>
-                <input type="text" class="form-control @error('full_name') is-invalid @enderror" 
-                       id="full_name" name="full_name" value="{{ old('full_name') }}">
-                @error('full_name')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+
+            <div>
+                <p style="margin-bottom: 10px;">Full Name: </p>
+                <input type="text" id="full_name" name="full_name" class="submission" placeholder="Type your Name">
             </div>
 
-            <!-- Email leader-->
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control @error('email') is-invalid @enderror" 
-                       id="email" name="email" value="{{ old('email') }}">
-                @error('email')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px;">Email: </p>
+                <input type="text" id="email" name="email" class="submission" placeholder="Type your Email">
             </div>
 
-            <!-- WhatsApp -->
-            <div class="mb-3">
-                <label for="whatsapp" class="form-label">WhatsApp Number</label>
-                <input type="text" class="form-control @error('whatsapp') is-invalid @enderror" 
-                       id="whatsapp" name="whatsapp" value="{{ old('whatsapp') }}">
-                @error('whatsapp')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px;">WhatsApp Number: </p>
+                <input type="text" id="whatsapp" name="whatsapp" class="submission" placeholder="Type your WhatsApp Number">
+            </div>
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px;">LINE ID: </p>
+                <input type="text" id="line_id" name="line_id" class="submission" placeholder="Type your LINE ID">
             </div>
 
-            <!-- Line ID -->
-            <div class="mb-3">
-                <label for="line_id" class="form-label">Line ID</label>
-                <input type="text" class="form-control @error('line_id') is-invalid @enderror" 
-                       id="line_id" name="line_id" value="{{ old('line_id') }}">
-                @error('line_id')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px;">Github / Github ID: </p>
+                <input type="text" id="github_id" name="github_id" class="submission" placeholder="Type your Github">
             </div>
 
-            <!-- GitHub ID Leader -->
-            <div class="mb-3">
-                <label for="github_id" class="form-label">GitHub ID</label>
-                <input type="text" class="form-control @error('github_id') is-invalid @enderror" 
-                       id="github_id" name="github_id" value="{{ old('github_id') }}">
-                @error('github_id')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px;">Birth Place: </p>
+                <input type="text" id="birthplace" name="birthplace" class="submission" placeholder="Type your Birth Place">
             </div>
 
-            <!-- tempat lahir leader -->
-            <div class="mb-3">
-                <label for="birthplace" class="form-label">Birthplace</label>
-                <input type="text" class="form-control @error('birthplace') is-invalid @enderror" 
-                       id="birthplace" name="birthplace" value="{{ old('birthplace') }}">
-                @error('birthplace')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
+            <div>
+                <p style="margin-top: 40px; margin-bottom: 10px;">Birth Date: </p>
+                <div class="submission" style="margin-bottom: 40px;">
+                    <input type="text" id="dateDisplay" class="date-display" placeholder="Select Date" readonly>
+                    <img src="../Assets_regist/Calendar_icon.png" alt="Calendar" class="calendar-icon" onclick="openDatePicker()">
+                    <input type="date" id="birthdate" name="birthdate" onchange="updateDate()">
+                </div>
 
-            <!-- tangga lahir leader -->
-            <div class="mb-3">
-                <label for="birthdate" class="form-label">Birthdate</label>
-                <input type="date" class="form-control @error('birthdate') is-invalid @enderror" 
-                       id="birthdate" name="birthdate" value="{{ old('birthdate') }}">
-                @error('birthdate')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+            <div>
+                <div style="display: flex; gap: 10px;">
+                    <img style="width: 81px; height: 81px;" src="../Assets_regist/Upload_logo.png">
+                    <p style="font-size: 29.4px; margin-bottom: -10px;">Upload CV: </p>
+                </div>
+                <div class="upload-label submission" style="border-radius: 10px; width: 227px; height: 38px; margin-left: 100px; padding: 0px;">
+                    <label for="cv">
+                        <img src="../Assets_regist/Upload_icon.png" alt="Upload" width="50" height="50">
+                        <input type="file" name="cv" id="cv" class="custom-file-input" required>
+                    </label>
+                </div>
             </div>
+            <p class="little-note" style="font-size: 16.19px; left: 100px;">*Format file pdf, jpg, jpeg dan png</p>
 
-            <!-- CV Upload -->
-            <div class="mb-3">
-                <label for="cv" class="form-label">Upload CV (PDF)</label>
-                <input type="file" class="form-control @error('cv') is-invalid @enderror" 
-                       id="cv" name="cv">
-                @error('cv')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+
+            <div style="margin-top: 50px;">
+                <div style="display: flex; gap: 10px;">
+                    <img style="width: 81px; height: 81px;" src="../Assets_regist/Upload_logo.png">
+                    <p style="font-size: 29.4px; margin-bottom: -10px;">Upload Flazz Card (Binusian): </p>
+                </div>
+                <div class="upload-label submission" style="border-radius: 10px; width: 227px; height: 38px; margin-left: 100px; padding: 0px;">
+                    <label for="flazz_card">
+                        <img src="../Assets_regist/Upload_icon.png" alt="Upload" width="50" height="50">
+                        <input type="file" name="flazz_card" id="flazz_card" class="custom-file-input">
+                    </label>
+                </div>
             </div>
+            <p class="little-note" style="font-size: 16.19px; left: 100px;">*Format file pdf, jpg, jpeg dan png</p>
 
-            <!-- Flazz Card Upload Optional untuk Binusian-->
-            <div class="mb-3">
-                <label for="flazz_card" class="form-label">Flazz Card (Binusian, JPG/PNG)</label>
-                <input type="file" class="form-control @error('flazz_card') is-invalid @enderror" 
-                       id="flazz_card" name="flazz_card">
-                @error('flazz_card')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+            <div style="margin-top:50px;">
+                <div style="display: flex; gap: 10px;">
+                    <img style="width: 81px; height: 81px;" src="../Assets_regist/Upload_logo.png">
+                    <p style="font-size: 29.4px; margin-bottom: -10px;">Upload ID Card (Non-Binusian): </p>
+                </div>
+                <div class="upload-label submission" style="border-radius: 10px; width: 227px; height: 38px; margin-left: 100px; padding: 0px;">
+                    <label for="id_card">
+                        <img src="../Assets_regist/Upload_icon.png" alt="Upload" width="50" height="50">
+                        <input type="file" name="id_card" id="id_card" class="custom-file-input">
+                    </label>
+                </div>
             </div>
+            <p class="little-note" style="font-size: 16.19px; left: 100px;">*Format file pdf, jpg, jpeg dan png</p>
 
-            <!-- ID Card Upload Optional untuk non Binusian -->
-            <div class="mb-3">
-                <label for="id_card" class="form-label">ID Card (Non-Binusian, JPG/PNG)</label>
-                <input type="file" class="form-control @error('id_card') is-invalid @enderror" 
-                       id="id_card" name="id_card">
-                @error('id_card')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+            
+            <div class="submit-button">
+                <button type="submit" id="submitButton" class="btn btn-primary">Submit</button>
             </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 
-    <!-- Bootstrap 5 JS for validation -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Error Modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="error-modal" id="errorModal">
+        <img id="errorImage" src="" alt="Error">
+    </div>
+
+    <script src="../js_regist/regist2.js"></script>
 </body>
 </html>

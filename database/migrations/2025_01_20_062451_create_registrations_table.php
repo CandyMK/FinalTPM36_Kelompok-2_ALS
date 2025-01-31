@@ -11,7 +11,6 @@ return new class extends Migration
         Schema::create('registrations', function (Blueprint $table) {
         $table->id(); // Primary Key
         $table->string('group_name', 100); // Limit length for better storage
-        $table->string('group_id', 50); // Assuming group_id has a reasonable length
         $table->string('password'); // Consider hashing passwords
         $table->enum('binusian_status', ['Binusian', 'Non-Binusian']);
         $table->string('full_name', 150); // Limit length for better storage

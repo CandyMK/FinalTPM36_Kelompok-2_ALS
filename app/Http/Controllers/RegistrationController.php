@@ -54,7 +54,7 @@ class RegistrationController extends Controller
             'github_id' => 'required|string|max:100',
             'birthplace' => 'required|string|max:100',
             'birthdate' => 'required|date',
-            'cv' => 'required|mimes:pdf|max:2048',
+            'cv' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
             'flazz_card' => 'nullable|mimes:jpg,jpeg,png|max:2048',
             'id_card' => 'nullable|mimes:jpg,jpeg,png|max:2048',
         ], [
