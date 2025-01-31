@@ -26,7 +26,7 @@ class AuthController extends Controller
         if ($user && Hash::check($request->password, $user->password)) {
             Auth::login($user); 
             $request->session()->regenerate();
-            return redirect()->route('home')->with('success', 'Login successful.');
+            return redirect()->route('user/dashboard')->with('success', 'Login successful.');
         } else {
             return redirect()->route('login')->with('error', 'Login failed, please try again.');
         }
