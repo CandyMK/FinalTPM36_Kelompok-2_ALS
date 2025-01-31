@@ -19,7 +19,7 @@
             <a class="Nav-link" href="Landing_page.html#page5">FAQ</a>
             <a class="Nav-link" href="Landing_page.html#page6">TIMELINE</a>
             <div class="login-block Nav-link">
-                <a class="Login" href="Login-Page.html">LOGIN</a>
+                <a class="Login" href="{{route('login')}}">LOGIN</a>
             </div>
         </div>
     </nav>
@@ -66,5 +66,6 @@
     </div>
 
     <script src="../js_regist/regist1.js"></script>
+    
 </body>
 </html>

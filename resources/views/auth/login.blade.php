@@ -46,8 +46,8 @@
             <button type="submit">Login</button>
         </form>
   
-        <a href="#" class="no-account">Don't have an account?</a>
-        <a href="Register_page_1.html">Sign Up</a>
+        <a href="register/page1" class="no-account">Don't have an account?</a>
+        <a href="register/page1">Sign Up</a>
     </div>
 
     <script src="login-Page.js"></script>
