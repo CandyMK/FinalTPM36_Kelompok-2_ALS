@@ -8,10 +8,17 @@ use Illuminate\Support\Facades\Auth;
 
 class UserDashboardController extends Controller
 {
+    
     public function showUserDashboard()
     {
-        $registrations = Registration::all();
-        return view('userDashboard', compact('registrations'));
+        $groupName = session('group_name'); 
+        // dd($groupName);
+        $user = Registration::where('group_name', $groupName)->first();
+        // dd($user);
+
+
+        // $registrations = Registration::all();
+        return view('userDashboard', compact('user'));
     }
 }
 

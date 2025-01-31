@@ -168,41 +168,36 @@
         </header>
 
         <main>
-            @php
-                $user = $registrations->where('id', session('user_id'))->first();
-            @endphp
-
             @if ($user)
-            <div class="team-info">
+                <div class="team-info">
+                    <h2>{{ $user->group_name }} Profile</h2>
+                    <h3>Leader</h3>
+                    <p>Full Name: {{ $user->full_name }}</p>
+                    <p>Email: {{ $user->email }}</p>
+                    <p>WhatsApp Number: {{ $user->whatsapp }}</p>
+                    <p>LINE ID: {{ $user->line_id }}</p>
+                    <p>Github / Github ID: {{ $user->github_id }}</p>
+                    <p>Birth Place: {{ $user->birthplace }}</p>
+                    <p>Birth Date: {{ $user->birthdate }}</p>
+                </div>
 
-                <h2 id="team-name"></h2>
-                <h3>Leader</h3>
-                <p id="full-name">Full Name: {{ $user->full_name }}</p>
-                <p id="email">Email: {{ $user->email }}</p>
-                <p id="whatsapp">WhatsApp Number: {{ $user->whatsapp }}</p>
-                <p id="line-id">LINE ID: {{ $user->line_id }}</p>
-                <p id="github">Github / Github ID: {{ $user->github_id }}</p>
-                <p id="birth-place">Birth Place: {{ $user->birthplace }}</p>
-                <p id="birth-date">Birth Date: {{ $user->birthdate }}</p>
-            </div>
+                <div class="document">
+                    <p>View CV:</p>
+                    <button id="view-cv">View CV</button>
+                    <p>View Flazz Card (Binusian):</p>
+                    <button id="view-flazz">View Flazz Card</button>
+                    <p>View ID Card (Non-Binusian):</p>
+                    <button id="view-id">View ID Card</button>
+                </div>
 
-            <div class="document">
-                <p>View CV:</p>
-                <button id="view-cv">View CV</button>
-                <p>View Flazz Card (Binusian):</p>
-                <button id="view-flazz">View Flazz Card</button>
-                <p>View ID Card (Non-Binusian):</p>
-                <button id="view-id">View ID Card</button>
-            </div>
-
-            <div class="contact">
-                <p>Contact Person</p>
-                <p id="contact-ig">IG: @devinac</p>
-                <p id="contact-line">LINE: @devinac</p>
-                <p id="contact-number">Number: 081278348654</p>
-            </div>
+                <div class="contact">
+                    <p>Contact Person</p>
+                    <p>IG: @devinac</p>
+                    <p>LINE: @devinac</p>
+                    <p>Number: 081278348654</p>
+                </div>
             @else
-            <p>User data not found.</p>
+                <p>User profile not found.</p>
             @endif
         </main>
 
