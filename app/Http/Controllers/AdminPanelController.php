@@ -3,63 +3,56 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class AdminPanelController extends Controller
 {
-    public function index() {
-        /*  Admin Panel : Front-End
-        * 1. Middleware for Role Authorization
-        * 2. Using Token System is Recommended
-        */
+    public function index(Request $request) {
+        $listOfGroups = [];
+        $orderBy = $request->query('sortBy', 'asc');
+        $column = $request->query('column', 'name');
+        $search = $request->query('search');
+
+        // Fetch Data from MySQL
+        if(!empty($search)) {
+            $listOfGroups = $this->searchGroup($search);
+        } else {
+            $listOfGroups = $this->fetchGroup($orderBy, $column);
+        }
+        
+        $listOfSortOptions = [
+            ['column' => 'name','sortBy' => 'asc', 'name' => 'Team Name A-Z'],
+            ['column' => 'name','sortBy' => 'desc', 'name' => 'Team Name Z-A'],
+            ['column' => 'created_at','sortBy' => 'desc', 'name' => 'Oldest Registration Date'],
+            ['column' => 'created_at','sortBy' => 'asc', 'name' => 'Latest Registration Date'],
+        ];
+        
+        return view('admin/adminPanel-show' )
+                ->with('listOfGroups', $listOfGroups)
+                ->with('listOfSortOptions', $listOfSortOptions);
     }
 
-    /**
-     * Get users by group ID.
-     * @param string $group_id The group ID to filter by.
-     */
-    public function getUsersByGroupId(string $group_id)
-    {
-        $participants = \DB::table('participants')->where('group_id', $group_id)->get();
-        return response()->json($participants);
+    public function fetchGroup(String $orderBy,String $column) {
+        return DB::table('groups')->orderBy($column, $orderBy)->get();        
     }
 
-    /**
-     * Get all groups by created_at
-     */
-    public function getAllGroups(string $orderBy)
-    {
-        $groups = \DB::table('groups')->orderBy("created_at", $orderBy);
-        return response()->json($groups);
-    }
-    /**
-     * Get all groups.
-     */
-    public function getAllGroupsSortBy(string $column, string $orderBy )
-    {
-        $groups = \DB::table('groups')->orderBy($column, $orderBy);
-        return response()->json($groups);
+    public function searchGroup(string $search) {        
+        return  DB::table('groups')->where('name', 'like', $search)->get();
     }
 
-        /**
-     * Edit participant details.
-     * @param int $userld The participant ID to edit.
-     */
-    public function editParticipants(int $userld, Request $request)
-    {
-        \DB::table('participants')->where('id', $userld)->update([
-            'name' => $request->input('name'),
-            'other' => $request->input('other')
-        ]);
-        return response()->json(['message' => 'Participant updated successfully']);
+    public function deleteGroup($id) {
+        $deleted = DB::table('groups')->where('id', '=', $id)->delete();
+        if(!$deleted) {
+            return redirect()->route('admin.dashboard')->with('error', 'Failed to Delete Group');
+        }
+        return redirect()->route('admin.dashboard')->with('success', 'Group Deleted');
     }
+    
 
-        /**
-     * Delete a participant.
-     * @param int $userld The participant ID to delete.     
-     */
-    public function deleteParticipants(int $userld)
+    public function showTeamDetails($teamId)
     {
-        \DB::table('participants')->where('id', $userld)->delete();
-        return response()->json(['message' => 'Participant deleted successfully']);
+    $team = DB::table('teams')->where('id', $teamId)->first();
+    $members = DB::table('team_members')->where('team_id', $teamId)->get();
+
+    return view('adminPanel-view', compact('team', 'members'));
     }
 }

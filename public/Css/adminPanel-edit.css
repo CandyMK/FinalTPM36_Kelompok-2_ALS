@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, #9CD1FC 0%, #2948A8 55%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-attachment: fixed;
+  padding-top: 50px;
+}
+
+header {
+  font-family: 'Londrina Solid', sans-serif;
+  font-weight: 400;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  padding: 5px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+header img {
+  position: flex;
+  top: 10px; 
+  height: 140px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  color: #000000;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 400;
+}
+
+.login-button {
+  display: inline-block;
+  width: 70px; 
+  height: 40px;
+  line-height: 40px;
+  text-align: center; 
+  border-radius: 15px;
+  background-color: #007BFF;
+  color: #FFFFFF;
+}
+
+.form-container {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+form {
+  max-width: 700px;
+  font-family: 'Josefin Sans', sans-serif;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  width: 230px;
+}
+
+.form-group input {
+  font-family: 'Josefin Sans', sans-serif;
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  font-family: 'Josefin Sans', sans-serif;
+  text-decoration: underline;
+  align-items: center;
+  margin: 30px auto 0;
+  padding: 10px 20px;
+  background: #FFFFFF;
+  color: #000000;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.profile {
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  text-align: center;
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.profile p {
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 0px;
+}
+
+@media (max-width: 768px) {
+  header {
+    margin-top: 10px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .form-container {
+    width: 80%;
+  }
+
+  .form-group label {
+    width: 160px;
+  }
+
+  .submit-btn {
+    padding: 10px 40px;
+  }
+
+  .profile {
+    margin-left: 20px;
+    text-align: center;
+    position: static;
+  }
+}
