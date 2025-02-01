@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".edit").forEach(button => {
         button.addEventListener("click", function () {
             const teamName = this.closest(".team").querySelector("h2").innerText;
-            window.location.href = `adminPanel-edit.html?team=${encodeURIComponent(teamName)}`;
+            window.location.href = `adminPanel-view.html?team=${encodeURIComponent(teamName)}`;
         });
     });
 
