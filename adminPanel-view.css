@@ -90,6 +90,13 @@ main h1 {
   flex-wrap: wrap;
 }
 
+.team-members a {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 40px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
 .member:nth-child(even) {
   transform: translateY(50px); 
 }
