@@ -7,6 +7,8 @@ function updateDate() {
     document.getElementById("dateDisplay").value = dateInput.value;
 }
 
+let userData = [];
+
 document.getElementById('submitButton').addEventListener('click', function (event) {
     event.preventDefault();
 
@@ -17,10 +19,11 @@ document.getElementById('submitButton').addEventListener('click', function (even
     const githubID = document.getElementById('GitID').value.trim();
     const birthPlace = document.getElementById('birthPlace').value.trim();
     const birthDate = document.getElementById('birthdate').value;
+
+    const cvFile = document.querySelector('#cvfile').files[0];
+    const flazzFile = document.querySelector('#flazzfile').files[0];
+    const idFile = document.querySelector('#idfile').files[0];
     
-    const cvFile = document.querySelector('.custom-file-input[name="file"]').files[0];
-    const flazzFile = document.querySelector('.custom-file-input[name="file"]').files[1];
-    const idFile = document.querySelector('.custom-file-input[name="file"]').files[2];
 
     // Load stored data from localStorage
     let users = JSON.parse(localStorage.getItem('userData')) || [];
@@ -95,7 +98,7 @@ document.getElementById('submitButton').addEventListener('click', function (even
         return;
     }
 
-    // STORE DATA IN LOCAL STORAGE
+    // STORE DATA
     const newUser = {
         fullName,
         email,
@@ -104,18 +107,51 @@ document.getElementById('submitButton').addEventListener('click', function (even
         githubID,
         birthPlace,
         birthDate,
-        cvFile: cvFile ? cvFile.name : null,
-        flazzFile: flazzFile ? flazzFile.name : null,
-        idFile: idFile ? idFile.name : null
+        files: {
+            cv: cvFile,
+            flazz: flazzFile,
+            id: idFile,
+        }
     };
 
-    users.push(newUser);
+    /* users.push(newUser);
     localStorage.setItem('userData', JSON.stringify(users));
+    console.log("All stored user data:", JSON.parse(localStorage.getItem('userData'))); */
 
-    // **Console log all stored data**
-    console.log("All stored user data:", JSON.parse(localStorage.getItem('userData')));
-    window.location.href = "Login-Page.html";
+    userData.push(newUser);
+    console.log("Stored Data:", userData);
+
 });
+
+const updateFileNameDisplay = (inputId, displayId, fileStoreKey) => {
+    const fileInput = document.getElementById(inputId);
+    const fileNameDisplay = document.getElementById(displayId);
+
+    if (fileInput && fileNameDisplay) {
+        fileInput.addEventListener('change', function () {
+            if (this.files.length > 0) {
+                const file = this.files[0];
+                fileNameDisplay.textContent = `${file.name}`;
+
+                    // Convert file to Base64 and store it
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function () {
+                    localStorage.setItem(fileStoreKey, reader.result); // Store in localStorage
+                    console.log(`Stored ${fileStoreKey} in localStorage.`);
+                };
+            } else {
+                fileNameDisplay.textContent = "No file selected";
+            }
+        });
+    } else {
+        console.error(`Element with ID '${inputId}' or '${displayId}' not found.`);
+    }
+};
+
+updateFileNameDisplay('cvfile', 'cvFile-name-display', 'cvFileData');
+updateFileNameDisplay('flazzfile', 'flazzFile-name-display', 'flazzFileData');
+updateFileNameDisplay('idfile', 'idFile-name-display', 'idFileData');
 
 // ERROR MODAL
 const showError = (imageUrl) => {

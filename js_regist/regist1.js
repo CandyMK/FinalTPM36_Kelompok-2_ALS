@@ -1,3 +1,5 @@
+let userData = [];
+
 const showError = (message, imageUrl) => {
     const modal = document.getElementById('errorModal');
     const overlay = document.getElementById('modalOverlay');
@@ -20,9 +22,11 @@ const storeMultipleEntries = (groupName, password, userType) => {
         userType: userType ? userType.value : null
     };
 
-    allEntries.push(newEntry);
-
-    localStorage.setItem('userData', JSON.stringify(allEntries));
+    // allEntries.push(newEntry);
+    // localStorage.setItem('userData', JSON.stringify(allEntries));
+    
+    userData.push(newEntry);
+    console.log("Stored Data:", userData);
 };
 
 const closeModal = (event) => {
@@ -46,7 +50,7 @@ document.getElementById('submitButton').addEventListener('click', function(event
     const userType = document.querySelector('input[name="type"]:checked');
 
     if (!groupName) {
-        showError("Group name is required.", "Assets_regist/group_name_error.png");
+        showError("Group name is required.", "Assets_regist/empty_group.png");
         return;
     }
 
@@ -79,7 +83,7 @@ document.getElementById('submitButton').addEventListener('click', function(event
     }
 });
 
-window.addEventListener('load', function() {
+/* window.addEventListener('load', function() {
     const storedData = JSON.parse(localStorage.getItem('userData'));
 
     if (storedData) {
@@ -89,6 +93,8 @@ window.addEventListener('load', function() {
     } else {
         console.log("No data found in localStorage.");
     }
-});
 
-//localStorage.clear();
+
+}); */
+
+// localStorage.clear();

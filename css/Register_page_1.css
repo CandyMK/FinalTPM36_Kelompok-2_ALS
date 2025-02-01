@@ -148,6 +148,7 @@ p{
     font-weight: 400;
     margin-left: 32%;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .checkbox{

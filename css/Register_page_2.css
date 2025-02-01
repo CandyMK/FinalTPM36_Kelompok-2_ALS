@@ -147,6 +147,7 @@ p{
     font-weight: 400;
     margin-left: 32%;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .checkbox{
@@ -184,7 +185,6 @@ p{
     display: none;
     animation: fadeIn 0.3s ease-in-out;
 }
-
 
 .error-modal {
     position: fixed;
@@ -304,4 +304,12 @@ p{
     height: 30px;
     cursor: pointer;
     margin-left: 10px;
+}
+
+.file-name-display {
+    width: 150px; 
+    max-width: 100%;
+    white-space: nowrap; 
+    overflow-x: auto; 
+    display: block;
 }

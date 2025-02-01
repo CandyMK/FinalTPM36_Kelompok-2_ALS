@@ -14,12 +14,12 @@
     <!-- Navbar atas -->
     <nav>
         <div class="Block">
-            <a class="Nav-link" href="Landing_page_home.html">HOME</a>
-            <a class="Nav-link" href="Landing_page_champion_prize.html">CHAMPION PRIZE</a>
-            <a class="Nav-link" href="Landing_page_mentornjury.html">MENTOR & JURYS</a>
-            <a class="Nav-link" href="Landing_page_about.html">ABOUT</a>
-            <a class="Nav-link" href="Landing_page_faq.html">FAQ</a>
-            <a class="Nav-link" href="Landing_page_timeline.html">TIMELINE</a>
+            <a class="Nav-link" href="Landing_page.html#page1">HOME</a>
+            <a class="Nav-link" href="Landing_page.html#page2">CHAMPION PRIZE</a>
+            <a class="Nav-link" href="Landing_page.html#page3">MENTOR & JURYS</a>
+            <a class="Nav-link" href="Landing_page.html#page4">TIMELINE</a>
+            <a class="Nav-link" href="Landing_page.html#page5">FAQ</a>
+            <a class="Nav-link" href="Landing_page.html#page6">ABOUT</a>
             <div class="login-block Nav-link">
                 <a class="Login" href="Login-Page.html">LOGIN</a>
             </div>
@@ -80,13 +80,14 @@
                     <p style="font-size: 29.4px; margin-bottom: -10px;">Upload CV: </p>
                 </div>
                 <div class="upload-label submission" style="border-radius: 10px; width: 227px; height: 38px; margin-left: 100px; padding: 0px;">
-                    <label for="file">
+                    <label for="cvfile">
                         <img src="Assets_regist/Upload_icon.png" alt="Upload" width="50" height="50">
-                        <input type="file" name="file" id="file" class="custom-file-input" required>
+                        <input type="file" name="file" id="cvfile" class="custom-file-input" required>
                     </label>
                 </div>
+                <p class="file-name-display" id="cvFile-name-display" style="font-size: 16px; left: 110px; margin-top: 10px; position: relative; top: -36px; z-index: 1000.5; color: black; left: 110px; overflow-x: auto;">No CV selected</p>
             </div>
-            <p class="little-note" style="font-size: 16.19px; left: 100px;">*Format file pdf, jpg, jpeg dan png</p>
+            <p class="little-note" style="font-size: 16.19px; left: 100px; top: -30px;">*Format file pdf, jpg, jpeg dan png</p>
 
 
             <div style="margin-top: 50px;">
@@ -95,13 +96,14 @@
                     <p style="font-size: 29.4px; margin-bottom: -10px;">Upload Flazz Card (Binusian): </p>
                 </div>
                 <div class="upload-label submission" style="border-radius: 10px; width: 227px; height: 38px; margin-left: 100px; padding: 0px;">
-                    <label for="file">
+                    <label for="flazzfile">
                         <img src="Assets_regist/Upload_icon.png" alt="Upload" width="50" height="50">
-                        <input type="file" name="file" id="file" class="custom-file-input" required>
+                        <input type="file" name="file" id="flazzfile" class="custom-file-input" required>
                     </label>
                 </div>
+                <p class="file-name-display" id="flazzFile-name-display" style="font-size: 16px; left: 110px; margin-top: 10px; position: relative; top: -36px; z-index: 1000.5; color: black;">No Flazz Card selected</p>
             </div>
-            <p class="little-note" style="font-size: 16.19px; left: 100px;">*Format file pdf, jpg, jpeg dan png</p>
+            <p class="little-note" style="font-size: 16.19px; left: 100px; top: -30px;">*Format file pdf, jpg, jpeg dan png</p>
 
             <div style="margin-top:50px;">
                 <div style="display: flex; gap: 10px;">
@@ -109,20 +111,20 @@
                     <p style="font-size: 29.4px; margin-bottom: -10px;">Upload ID Card (Non-Binusian): </p>
                 </div>
                 <div class="upload-label submission" style="border-radius: 10px; width: 227px; height: 38px; margin-left: 100px; padding: 0px;">
-                    <label for="file">
+                    <label for="idfile">
                         <img src="Assets_regist/Upload_icon.png" alt="Upload" width="50" height="50">
-                        <input type="file" name="file" id="file" class="custom-file-input" required>
+                        <input type="file" name="file" id="idfile" class="custom-file-input" required>
                     </label>
                 </div>
+                <p class="file-name-display" id="idFile-name-display" style="font-size: 16px; left: 110px; margin-top: 10px; position: relative; top: -36px; z-index: 1000.5; color: black;">No ID Card selected</p>
             </div>
-            <p class="little-note" style="font-size: 16.19px; left: 100px;">*Format file pdf, jpg, jpeg dan png</p>
+            <p class="little-note" style="font-size: 16.19px; left: 100px; top: -30px;">*Format file pdf, jpg, jpeg dan png</p>
 
-            <div class="submit-button">
+            <div class="submit-button" id="submitButton">
                 <a href="#" id="submitButton" type="submit">Submit</a>
             </div>
         </form>
     </div>
-
 
     <!-- Buat pop up error -->
     <div id="modalOverlay" class="modal-overlay"></div>
